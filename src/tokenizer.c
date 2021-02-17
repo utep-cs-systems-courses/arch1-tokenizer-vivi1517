@@ -20,18 +20,18 @@ int non_space_char(char c)
 
 char word_start(char *str)
 {
-  while (*str == ' ' | *str == '\t' | *str == '\n'){
-    *str++;
+  while (space_char(*str) > 0){
+    str++;
   }
-  return *str;
+  return str;
 }
 
 char *word_terminator(char *word)
 {
-  while (*word != ' ' | *word != '\t' | *word != '\n'){
-    *word++;
+  while (non_space_char(*s) > 0){
+    word++;
   }
-  return *word;
+  return word;
 }
 
 int count_words(char *str)
