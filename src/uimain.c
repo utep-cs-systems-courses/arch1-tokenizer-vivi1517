@@ -10,6 +10,6 @@ int main()
   fgets(word, 100, stdin);
   printf("%s\n", word);
 
-  printf("Now checking for empty spaces: %d\n", non_space_char('\t'));
+  printf("Number of words: %d\n", count_words(word));
   return 0;
 }
