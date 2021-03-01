@@ -80,6 +80,15 @@ char **tokenize(char* str){
   return tokens;
 }
 
-void print_tokens(char **tokens){
-  
+void print_tokens(char **tokens)
+{
+  while (tokens && (*tokens != NULL)){
+    printf("%s\n", *tokens);
+    tokens++;
+  }
+}
+
+void free_tokens(char **tokens)
+{
+  free(tokens);
 }

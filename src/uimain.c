@@ -11,5 +11,7 @@ int main()
   printf("%s\n", word);
 
   printf("Number of words: %d\n", count_words(word));
+  char **tokens = tokenize(word);
+  print_tokens(tokens);
   return 0;
 }
