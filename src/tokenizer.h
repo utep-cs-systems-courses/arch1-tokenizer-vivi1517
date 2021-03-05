@@ -44,4 +44,6 @@ void print_tokens(char **tokens);
 /* Frees all tokens and the vector containing themx. */
 void free_tokens(char **tokens);
 
+int string_compare(char str[], char str2[]);
+
 #endif

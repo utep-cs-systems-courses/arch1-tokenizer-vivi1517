@@ -90,5 +90,24 @@ void print_tokens(char **tokens)
 
 void free_tokens(char **tokens)
 {
+  char **p = tokens;
+  char **iter = tokens;
+  while (*p != NULL){
+    p = iter;
+    iter++;
+    free(p);
+  }
+  free(iter);
   free(tokens);
+}
+
+int string_compare(char str[], char str2[]){
+  while (*str != '\0' || *str2 != '\0'){
+    if (*str == *str2){
+      return 1;
+    }
+    else{
+      return 0;
+    }
+  }
 }
