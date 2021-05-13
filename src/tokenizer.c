@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "tokenizer.h"
@@ -77,6 +78,7 @@ char **tokenize(char* str){
       tokens[i] = copy_str(str, length);
       str = word_start(word_terminator(str));
   }
+  tokens[total] = 0;
   return tokens;
 }
 
@@ -91,14 +93,12 @@ void print_tokens(char **tokens)
 void free_tokens(char **tokens)
 {
   char **p = tokens;
-  char **iter = tokens;
-  while (*p != NULL){
-    p = iter;
-    iter++;
-    free(p);
+  while (p != NULL){
+    
+    free(*p);
+    p++;
   }
-  free(iter);
-  free(tokens);
+  free(p);
 }
 
 int string_compare(char str[], char str2[]){

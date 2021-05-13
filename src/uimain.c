@@ -14,6 +14,7 @@ int main()
     printf("a. Tokenizer\n");
     printf("b. Print History\n");
     printf("q. Quit\n");
+    // fpurge(stdin);
     fgets(word, 100, stdin);
     printf("You entered: %s\n", word);
     if (string_compare(word, "a") == 1){

@@ -61,12 +61,14 @@ void print_history(List *list){
 }
 
 void free_history(List *list){
-  Item *temp =list->root;
   Item *iter = list->root;
-  while(list != NULL){
-    temp = list->root;
-    iter = temp->next;
-    free(temp);
+  while(iter->next != 0){
+    Item *prev = iter;
+    iter = iter->next;
+    free(prev->str);
+    free(prev);
   }
+  free(iter->str);
+  free(iter);
   free(list);
 }
